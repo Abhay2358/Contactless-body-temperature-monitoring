@@ -12,8 +12,8 @@ from email.mime.image import MIMEImage
 from smbus2 import SMBus
 from mlx90614 import MLX90614
  
-fromaddr = "test2718test@gmail.com"    # change the email address accordingly
-toaddr = "electrofunedu@gmail.com"
+fromaddr = "*********"    # Email ID from which you want to send mail
+toaddr = "***********"    # Email Id to whome you want to send the mail 
  
 mail = MIMEMultipart()
  
@@ -35,7 +35,7 @@ def sendMail(data):
     mail.attach(image)
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(fromaddr, "test12345@")
+    server.login(fromaddr, "********")            #add your password of mail ID from which you are sending mail
     text = mail.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
